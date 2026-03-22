@@ -59,34 +59,41 @@
     <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(120,120)" name="Pin">
       <a name="appearance" val="classic"/>
+      <a name="label" val="B"/>
       <a name="width" val="4"/>
     </comp>
     <comp lib="0" loc="(120,160)" name="Pin">
       <a name="appearance" val="classic"/>
+      <a name="label" val="OP"/>
       <a name="width" val="4"/>
     </comp>
     <comp lib="0" loc="(120,80)" name="Pin">
       <a name="appearance" val="classic"/>
+      <a name="label" val="A"/>
       <a name="width" val="4"/>
     </comp>
     <comp lib="0" loc="(230,100)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
+      <a name="label" val="C"/>
       <a name="labelloc" val="east"/>
     </comp>
     <comp lib="0" loc="(230,130)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
+      <a name="label" val="V"/>
       <a name="labelloc" val="east"/>
     </comp>
     <comp lib="0" loc="(230,160)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
+      <a name="label" val="Z"/>
       <a name="labelloc" val="east"/>
     </comp>
     <comp lib="0" loc="(230,80)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
+      <a name="label" val="F"/>
       <a name="labelloc" val="east"/>
       <a name="type" val="output"/>
       <a name="width" val="8"/>
@@ -204,5 +211,101 @@
     <wire from="(470,230)" to="(490,230)"/>
     <wire from="(490,250)" to="(490,360)"/>
     <wire from="(510,260)" to="(560,260)"/>
+  </circuit>
+  <circuit name="parity8_gen">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="parity8_gen"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="1.0"/>
+    <comp lib="0" loc="(130,120)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="label" val="A"/>
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="0" loc="(130,370)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="label" val="P"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(180,340)" name="Splitter">
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+      <a name="spacing" val="4"/>
+    </comp>
+    <comp loc="(1180,170)" name="my_xor"/>
+    <comp loc="(1400,210)" name="my_xor"/>
+    <comp loc="(1620,250)" name="my_xor"/>
+    <comp loc="(1840,290)" name="my_xor"/>
+    <comp loc="(520,50)" name="my_xor"/>
+    <comp loc="(740,90)" name="my_xor"/>
+    <comp loc="(960,130)" name="my_xor"/>
+    <wire from="(1180,170)" to="(1180,210)"/>
+    <wire from="(1180,230)" to="(1180,250)"/>
+    <wire from="(130,120)" to="(130,340)"/>
+    <wire from="(130,340)" to="(180,340)"/>
+    <wire from="(130,370)" to="(1840,370)"/>
+    <wire from="(1400,210)" to="(1400,250)"/>
+    <wire from="(1400,270)" to="(1400,290)"/>
+    <wire from="(1620,250)" to="(1620,290)"/>
+    <wire from="(1620,310)" to="(1620,330)"/>
+    <wire from="(1840,290)" to="(1840,370)"/>
+    <wire from="(200,130)" to="(520,130)"/>
+    <wire from="(200,170)" to="(740,170)"/>
+    <wire from="(200,210)" to="(960,210)"/>
+    <wire from="(200,250)" to="(1180,250)"/>
+    <wire from="(200,290)" to="(1400,290)"/>
+    <wire from="(200,330)" to="(1620,330)"/>
+    <wire from="(200,50)" to="(300,50)"/>
+    <wire from="(200,90)" to="(300,90)"/>
+    <wire from="(300,70)" to="(300,90)"/>
+    <wire from="(520,110)" to="(520,130)"/>
+    <wire from="(520,50)" to="(520,90)"/>
+    <wire from="(740,150)" to="(740,170)"/>
+    <wire from="(740,90)" to="(740,130)"/>
+    <wire from="(960,130)" to="(960,170)"/>
+    <wire from="(960,190)" to="(960,210)"/>
+  </circuit>
+  <circuit name="z_detect8_v1">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="z_detect8_v1"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="1.0"/>
+    <comp lib="0" loc="(150,140)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="label" val="A"/>
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="0" loc="(170,180)" name="Splitter">
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+    </comp>
+    <comp lib="0" loc="(360,140)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="Z"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="1" loc="(310,140)" name="NOR Gate">
+      <a name="inputs" val="8"/>
+    </comp>
+    <wire from="(150,140)" to="(150,180)"/>
+    <wire from="(150,180)" to="(170,180)"/>
+    <wire from="(190,100)" to="(250,100)"/>
+    <wire from="(190,110)" to="(250,110)"/>
+    <wire from="(190,120)" to="(250,120)"/>
+    <wire from="(190,130)" to="(250,130)"/>
+    <wire from="(190,140)" to="(240,140)"/>
+    <wire from="(190,150)" to="(230,150)"/>
+    <wire from="(190,160)" to="(220,160)"/>
+    <wire from="(190,170)" to="(210,170)"/>
+    <wire from="(210,170)" to="(210,180)"/>
+    <wire from="(210,180)" to="(250,180)"/>
+    <wire from="(220,160)" to="(220,170)"/>
+    <wire from="(220,170)" to="(250,170)"/>
+    <wire from="(230,150)" to="(230,160)"/>
+    <wire from="(230,160)" to="(250,160)"/>
+    <wire from="(240,140)" to="(240,150)"/>
+    <wire from="(240,150)" to="(250,150)"/>
+    <wire from="(310,140)" to="(360,140)"/>
   </circuit>
 </project>
