@@ -308,4 +308,10 @@
     <wire from="(240,150)" to="(250,150)"/>
     <wire from="(310,140)" to="(360,140)"/>
   </circuit>
+  <circuit name="ula4_v2">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="ula4_v2"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="1.0"/>
+  </circuit>
 </project>
