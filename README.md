@@ -1,1 +1,6 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/A2UoX1f7)
+| Passo | Expressão | Transformação | Regra/Lei | Observação |
+|---|---|---|---|---|
+| 1 | A⊕B=AB'+A'B | Expressão Original | - | Definição padrão do XOR |
+| 2 | AB'+A'B | Dupla Negação | Regra 9 | Preparando para DeMorgan |
+| 3 | (AB')⋅(A'B) | DeMorgan | Teorema 2 | Convertendo Soma em Produto Negado |
+| 4 | - | Refatoração NAND | NAND-only | Implementação final com 4 portas |
